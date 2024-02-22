@@ -16,7 +16,7 @@ const currentResultOutput = document.querySelector('#current-result');
 // console.log('addBtn', addBtn);
 // console.log('subtractBtn', subtractBtn);
 //console.log('multiplyBtn', multiplyBtn);
-console.log('divideBtn', divideBtn);
+//console.log('divideBtn', divideBtn);
 // console.log('currentCalculationOutput', currentCalculationOutput);
 // console.log('currentResultOutput', currentResultOutput);
 
@@ -47,6 +47,17 @@ function add() {
   console.log(`${operand1} + ${operand2} = ${currentResult}`);
   outputResult(currentResult, calTest);
 }
-
 //mouse click後交給add程式處理
 addBtn.addEventListener('click', add);
+
+//subtract程式
+function subtract() {
+  const operand1 = currentResult;
+  const operand2 = getUserInput();
+  currentResult = operand1 - operand2;
+  const calTest = `${operand1} - ${operand2}`;
+  console.log(`${operand1} - ${operand2} = ${currentResult}`);
+  outputResult(currentResult, calTest);
+}
+
+subtractBtn.addEventListener('click', subtract);
