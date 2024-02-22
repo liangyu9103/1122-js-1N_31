@@ -61,3 +61,15 @@ function subtract() {
 }
 
 subtractBtn.addEventListener('click', subtract);
+
+//multiply
+function multiply() {
+  const operand1 = currentResult;
+  const operand2 = getUserInput();
+  currentResult = operand1 * operand2;
+  const calTest = `${operand1} * ${operand2}`;
+  console.log(`${operand1} * ${operand2} = ${currentResult}`);
+  outputResult(currentResult, calTest);
+}
+
+multiplyBtn.addEventListener('click', multiply);
