@@ -59,7 +59,6 @@ function subtract() {
   console.log(`${operand1} - ${operand2} = ${currentResult}`);
   outputResult(currentResult, calTest);
 }
-
 subtractBtn.addEventListener('click', subtract);
 
 //multiply
@@ -71,5 +70,18 @@ function multiply() {
   console.log(`${operand1} * ${operand2} = ${currentResult}`);
   outputResult(currentResult, calTest);
 }
-
 multiplyBtn.addEventListener('click', multiply);
+
+//divide
+function divide() {
+  const operand1 = currentResult;
+  const operand2 = getUserInput();
+  if (operand2 == 0) alert('cannot divide by 0');
+  else {
+    currentResult = operand1 / operand2;
+    const calTest = `${operand1} / ${operand2}`;
+    console.log(`${operand1} / ${operand2} = ${currentResult}`);
+    outputResult(currentResult, calTest);
+  }
+}
+divideBtn.addEventListener('click', divide);
