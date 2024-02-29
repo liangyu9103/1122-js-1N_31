@@ -38,5 +38,75 @@ const reset = () => {
   done = false;
 };
 
+const checkWin = (player) => {
+  /*p是一個陣列*/
+  let p = [];
+  allLi.forEach((item) => {
+    p.push(item.classList.contains(player));
+  });
+  /*抓到值是x還是o,true or false*/
+  console.log('p', p);
+  /*0用p1取代,1用p2取代....*/
+  const [p1, p2, p3, p4, p5, p6, p7, p8, p9] = p;
+  if (
+    (p1 && p2 && p3) ||
+    (p4 && p5 && p6) ||
+    (p7 && p8 && p9) ||
+    (p1 && p4 && p7) ||
+    (p2 && p5 && p8) ||
+    (p3 && p6 && p9) ||
+    (p1 && p5 && p9) ||
+    (p3 && p5 && p7)
+  )
+    /*return true到checkWin */
+    return true;
+  else return false;
+};
+
+const winMessage = (player) => {
+  if (player === 'o') {
+    container.style.backgroundColor = 'rgba(144, 238, 144, 0.5)';
+  } else {
+    container.style.backgroundColor = 'rgba(240, 118, 128, 0.726)';
+  }
+  alert(`player ${player} wins`);
+};
+
+allLi.forEach((item) => {
+  /*監控每一個item*/
+  item.addEventListener('click', () => {
+    if (item.classList.contains('disabled')) {
+      alert('already filled');
+    } else {
+      if (turn % 2 === 0) {
+        /*偶數,"===“指定*/
+        item.textContent = 'O';
+        /*item.classList = 'o disabled';*/
+        item.classList.add('o', 'disabled');
+        if (checkWin(o)) {
+          winMessage(o);
+          done = true;
+        }
+      } else if (turn % 2 === 1) {
+        /*基數,"===“指定*/
+        item.textContent = 'X';
+        item.classList.add('x', 'disabled');
+        if (checkWin(x)) {
+          winMessage(x);
+          done = true;
+        }
+      }
+
+      /*每走一步就+1*/
+      if (!done && turn < 8) {
+        turn++;
+      } else if (!done && turn >= 8) {
+        /*若走完還沒結束就是tie*/
+        alert('tie');
+      }
+    }
+  });
+});
+
 //當'click'後,交給reset function
 resetBtn.addEventListener('click', reset);
