@@ -1,8 +1,8 @@
 /*const,let宣告變數時,要放在最外面,不能在function內*/
-/*定const資料不能改*/
+/*定const(常數)資料不能改*/
 const o = 'o';
 const x = 'x';
-/*定let資料可以更改*/
+/*定let(變數)資料可以更改*/
 let turn = 0;
 let done = false;
 
