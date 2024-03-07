@@ -1,5 +1,3 @@
-let c, f;
-
 //const盽计querySelector琩高ˉˇ盽计
 const userInput = document.querySelector('#input-number');
 
@@ -25,11 +23,9 @@ function outputResult(result, text) {
 //operand笲衡じ
 function c() {
   const operand1 = currentCalculation;
-  console.log(`${operand1}`);
-  //
-  //currentCalculation = operand1 + operand2;
-  // `﹃柑Ж跑计`
-  //const calTest = `${operand1} + ${operand2}`;
+
+  currentCalculation = operand1 + operand2;
+  const calTest = `${operand1} + ${operand2}`;
   //console.log(`${operand1} + ${operand2} = ${current - calculation}`);
   //outputResult(current - calculation, calTest);
 }
