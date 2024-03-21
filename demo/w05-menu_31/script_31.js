@@ -37,7 +37,13 @@ const displayMenuItems = (menu) => {
   //把資料插進sectionCenter
   sectionCenter.innerHTML = displayMenu;
 };
+
+//回家作業
+const category = ['all', 'breakfast', 'lunch', 'dinner', 'shakes'];
+const displayMenuButtons = () => {};
+
 //dom讀進來後,呼叫一個程式; caal back fn:() => {}:資料抓回來之後通知
 window.addEventListener('DOMContentLoaded', () => {
   displayMenuItems(menu);
+  displayMenuButtons();
 });
