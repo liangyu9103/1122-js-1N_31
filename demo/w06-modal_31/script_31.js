@@ -6,11 +6,11 @@ import menu from './data_31.js';
 const sectionCenter = document.querySelector('.section-center');
 const btnContainer = document.querySelector('.btn-container');
 console.log('menu', menu);
-console.log('category', category);
+//console.log('category', category);
 
 //menu.map((item):轉成陣列把每一個item走一遍
-const displayMenuItems = (menu) => {
-  let displayMenu = menu
+const displayMenuItems = (menuItems) => {
+  let displayMenu = menuItems
     .map((item) => {
       //解構,下面取代才能寫成${}
       const { id, title, category, price, img, desc } = item;
@@ -50,10 +50,10 @@ const menuCategories = new Set(
     return item.category;
   })
 );
-console.log('menuCategories', menuCategories);
+//console.log('menuCategories', menuCategories);
 
 const categories = ['all', ...menuCategories];
-console.log('categories', categories);
+//console.log('categories', categories);
 
 const displayMenuButtons = () => {
   let menuButtons = categories
@@ -63,7 +63,7 @@ const displayMenuButtons = () => {
     `;
     })
     .join('');
-  console.log('menuButtons', menuButtons);
+  //console.log('menuButtons', menuButtons);
   btnContainer.innerHTML = menuButtons;
 
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -76,6 +76,11 @@ const displayMenuButtons = () => {
       console.log('data-id', e.currentTarget.dataset.id);
       const category = e.currentTarget.dataset.id;
       const filterMenu = menu.filter((item) => item.category === category);
+      if (category === 'all') {
+        displayMenuItems(menu);
+      } else {
+        displayMenuItems(filterMenu);
+      }
     });
   });
 };
