@@ -42,25 +42,38 @@ const displayMenuItems = (menu) => {
   sectionCenter.innerHTML = displayMenu;
 };
 
-//回家作業
-const displayMenuButtons = (category) => {
-  let displayButtons = category
-    .map((btn) => {
-      //const category = ['all', 'breakfast', 'lunch', 'dinner', 'shakes'];
-      const { id, text } = btn;
-      return `
-        <div class="btn-container">
-        <button type="button" class="filter-btn" data-id="all">${text}</button>
-      </div>
-            `;
-    })
-    .join('');
-  console.log('displayButtons', displayButtons);
-  btnContainer.innerHTML = displayButtons;
-};
+//回家作業答案
+//menu裡面資料map
+//把資料return進去
+const menuCategories = new Set(
+  menu.map((item) => {
+    return item.category;
+  })
+);
+console.log('menuCategories', menuCategories);
+
+const categories = ['all', ...menuCategories];
+console.log('categories', categories);
+
+// //回家作業
+// const displayMenuButtons = (category) => {
+//   let displayButtons = category
+//     .map((btn) => {
+//       //const category = ['all', 'breakfast', 'lunch', 'dinner', 'shakes'];
+//       const { id, text } = btn;
+//       return `
+//         <div class="btn-container">
+//         <button type="button" class="filter-btn" data-id="all">${text}</button>
+//       </div>
+//             `;
+//     })
+//     .join('');
+//   console.log('displayButtons', displayButtons);
+//   btnContainer.innerHTML = displayButtons;
+// };
 
 //dom讀進來後,呼叫一個程式; call back fn:() => {}:資料抓回來之後通知
 window.addEventListener('DOMContentLoaded', () => {
   displayMenuItems(menu);
-  displayMenuButtons(category);
+  //displayMenuButtons(category);
 });
