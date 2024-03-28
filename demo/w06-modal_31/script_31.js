@@ -55,6 +55,31 @@ console.log('menuCategories', menuCategories);
 const categories = ['all', ...menuCategories];
 console.log('categories', categories);
 
+const displayMenuButtons = () => {
+  let menuButtons = categories
+    .map((category) => {
+      return `
+    <button type="button" class="filter-btn" data-id="${category}">${category}</button>
+    `;
+    })
+    .join('');
+  console.log('menuButtons', menuButtons);
+  btnContainer.innerHTML = menuButtons;
+
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  console.log('filterBtns', filterBtns);
+  //forEach:陣列每一個都會做一遍
+  //e.currentTarget：滑鼠點到的目標
+  filterBtns.forEach((btn) => {
+    //click後執行後面function
+    btn.addEventListener('click', (e) => {
+      console.log('data-id', e.currentTarget.dataset.id);
+      const category = e.currentTarget.dataset.id;
+      const filterMenu = menu.filter((item) => item.category === category);
+    });
+  });
+};
+
 // //回家作業
 // const displayMenuButtons = (category) => {
 //   let displayButtons = category
