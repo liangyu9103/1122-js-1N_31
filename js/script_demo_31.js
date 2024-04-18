@@ -35,5 +35,14 @@ function showdemo(week) {
     case 'w6-menu':
       p.innerHTML = `<iframe src="./demo/w06-menu_31/index.html" width="100%" height="100%"  />`;
       break;
+    case 'mid21-p1_31':
+      p.innerHTML = `<iframe src="./exams/w09/mid21_31/p1_31/p1_31.html" width="100%" height="100%"  />`;
+      break;
+    case 'mid21-p2_31':
+      p.innerHTML = `<iframe src="./exams/w09/mid21_31/p2_31/p2_31.html" width="100%" height="100%"  />`;
+      break;
+    case 'mid21-p3_31':
+      p.innerHTML = `<iframe src="./exams/w09/mid21_31/p3_xx/p3_31.html" width="100%" height="100%"  />`;
+      break;
   }
 }
