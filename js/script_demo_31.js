@@ -29,5 +29,11 @@ function showdemo(week) {
     case 'w5':
       p.innerHTML = `<iframe src="./demo/w05-menu_31/index.html" width="100%" height="100%"  />`;
       break;
+    case 'w6-modal':
+      p.innerHTML = `<iframe src="./demo/w06_modal_31/index.html" width="100%" height="100%"  />`;
+      break;
+    case 'w6-menu':
+      p.innerHTML = `<iframe src="./demo/w06-menu_31/index.html" width="100%" height="100%"  />`;
+      break;
   }
 }
