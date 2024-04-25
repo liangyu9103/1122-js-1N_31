@@ -22,6 +22,11 @@ VALUES
 
 INSERT INTO product_31 (id, title, price, category, img, remote_img)
 VALUES
+(20, 'living room', 99.99, 'Liddy', './images/product-20.jpg', 'https://szbwskgtksqzkhaokhez.supabase.co/storage/v1/object/public/demo/1122/shche_-team-cwMr5XYhNew-unsplash.jpg'),
+
+
+INSERT INTO product_31 (id, title, price, category, img, remote_img)
+VALUES
 (1, 'Emperor Bed', 21.99, 'Liddy', './images/product-1.jpg', ''),
 (2, 'Accent Chair', 25.99, 'Caressa', './images/product-2.jpg', ''),
 (3, 'High-Back Bench', 9.99, 'Ikea', './images/product-3.jpg', ''),
