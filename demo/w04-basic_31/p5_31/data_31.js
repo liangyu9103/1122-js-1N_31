@@ -35,4 +35,11 @@ export const tours_31 = [
     local_img: './img/poland.jpeg',
     price: 2595,
   },
+  {
+    id: 6,
+    name: '台灣夜市',
+    info: '最喜歡南機場夜市',
+    local_img: './img/taiwan.jpg',
+    price: 2595,
+  },
 ];
