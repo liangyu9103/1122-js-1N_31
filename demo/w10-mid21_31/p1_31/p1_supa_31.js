@@ -21,12 +21,33 @@ const productContainer = document.querySelector('.products-container');
 
 console.log('product_31', product_31);
 
-const DisplayProducts = (products) => {};
+const displayProducts = (products) => {
+  /*把products陣列用map轉到另外一個productsContent陣列*/
+  let productsContent = products
+    .map((product) => {
+      const { id, title, price, category, img, remote_url } = product;
+      return `
+    <div class="single-product">
+    <img
+      src=${img}
+      class="single-product-img img"
+      alt=${title}
+    />
+    <footer>
+      <h3 class="name">${title} (${id})</h3>
+      <span class="price">$${price}</span>
+    </footer>
+  </div>
+    `;
+    }) /*join把陣列為自串起來然後顯示 */
+    .join('');
+  productContainer.innerHTML = productsContent;
+};
 
 /*async:非同步 */
 document.addEventListener('DOMContentLoaded', async () => {
   /*先抓資料getProductsSupabase，await後再product_31 */
   product_31 = await getProductsSupabase_31();
   /*再繼續往下做 */
-  DisplayProducts(product_31);
+  displayProducts(product_31);
 });
