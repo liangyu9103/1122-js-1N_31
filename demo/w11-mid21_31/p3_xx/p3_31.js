@@ -20,6 +20,7 @@ function changeImage(index) {
   }
 }
 
+/*html中click L1後，執行js裡的function showTKU60 */
 function showTKU60() {
   const p = document.querySelector('#menu1');
   console.log('p', p);
@@ -43,7 +44,7 @@ function showTKU60() {
 </ul>
   `;
 }
-
+/*html中click L2後，執行js裡的function clearMenu1All */
 function clearMenu1All() {
   const p = document.querySelector('#menu1');
   p.innerHTML = ``;
