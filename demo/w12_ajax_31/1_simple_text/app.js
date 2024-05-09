@@ -10,7 +10,7 @@ console.log('xhr', xhr);
 xhr.onreadystatechange = function () {
   console.log('xhr', xhr);
   if (xhr.readyState === 4 && xhr.status === 200) {
-    /* 於前端創建段落p */
+    /* 產生一個<p>，把資料塞在裡面 */
     const text = document.createElement('p');
     /*將XHR回應的內容設置為剛建立的段落元素的文本內容*/
     text.textContent = xhr.responseText;
