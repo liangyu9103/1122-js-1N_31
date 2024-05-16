@@ -12,7 +12,7 @@
   {
     "id": 2,
     "title" : "diner double",
-    "category": "lunch",
+    "category": "dessert",
     "price": 13.99,
     "local_img": "./images/item-2.jpeg",
     "remote_img": "",
