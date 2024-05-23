@@ -5,12 +5,12 @@ import { _supabase } from './clientSupabase_31.js';
 
 //console.log('_supabase', _supabase);
 
-let product_31 = [];
+let products2_31 = [];
 
 const getProductsSupabase_31 = async () => {
   try {
-    let { data, error } = await _supabase.from('product_31').select('*');
-    console.log('product data', data);
+    let { data, error } = await _supabase.from('products2_31').select('*');
+    console.log('products data', data);
     return data;
   } catch (error) {
     console.log(error);
@@ -19,23 +19,23 @@ const getProductsSupabase_31 = async () => {
 
 const productContainer = document.querySelector('.products-container');
 
-console.log('product_31', product_31);
+console.log('product_31', products2_31);
 
 const displayProducts = (products) => {
   /*把products陣列用map轉到另外一個productsContent陣列*/
   let productsContent = products
     .map((product) => {
-      const { name, price, image, remote_url } = product.fields;
+      const { title, price, localImg } = product;
       //const { id } = product;
       return `
     <div class="single-product">
     <img
-      src=${image}
+      src=${localImg}
       class="single-product-img img"
-      alt=${name}
+      alt=${title}
     />
     <footer>
-      <h3 class="name">${name}</h3>
+      <h3 class="name">${title}</h3>
       <span class="price">$${price}</span>
     </footer>
   </div>
@@ -48,7 +48,7 @@ const displayProducts = (products) => {
 /*async:非同步 */
 document.addEventListener('DOMContentLoaded', async () => {
   /*先抓資料getProductsSupabase，await後再product_31 */
-  product_31 = await getProductsSupabase_31();
+  products2_31 = await getProductsSupabase_31();
   /*再繼續往下做 */
-  displayProducts(product_31);
+  displayProducts(products2_31);
 });
