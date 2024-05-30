@@ -44,5 +44,8 @@ function showdemo(week) {
     case 'mid21-p3_31':
       p.innerHTML = `<iframe src="./exams/w09/mid21_31/p3_xx/p3_31.html" width="100%" height="100%"  />`;
       break;
+    case 'project':
+      p.innerHTML = `<iframe src="./project/products_supa_31.html" width="100%" height="100%"  />`;
+      break;
   }
 }
