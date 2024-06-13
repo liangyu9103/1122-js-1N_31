@@ -6,7 +6,8 @@
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+ monospace;
 }
 
 body {
@@ -29,6 +30,12 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 25px;
+}
+.header .name{
+  padding: 35px;
+  cursor: pointer;
+  color: black;
+  font-weight: bolder;
 }
 
 .header .logo-container {
