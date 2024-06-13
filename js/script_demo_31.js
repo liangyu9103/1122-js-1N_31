@@ -47,5 +47,8 @@ function showdemo(week) {
     case 'project':
       p.innerHTML = `<iframe src="./project/products_supa_31.html" width="100%" height="100%"  />`;
       break;
+    case 'w15_product_31':
+      p.innerHTML = `<iframe src="./demo/w15_product_31/products_supa_31.html" width="100%" height="100%"  />`;
+      break;
   }
 }
